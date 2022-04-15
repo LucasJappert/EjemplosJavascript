@@ -1,0 +1,37 @@
+body{
+    background-color: black;
+    font-size:22px;
+    color:#BBB;
+}
+input{
+    height:50px;
+    line-height:50px;
+    width:400px;
+    background-color: #333;
+    border:1px solid #999;
+    border-radius:20px;
+    font-size:22px;
+    color:white;
+    padding:0 20px;
+}
+.Boton{
+    width:150px;
+    cursor:pointer;
+}
+.Boton:hover{
+    background-color: #555;
+}
+#BotonGuardar{
+    margin-left:20px;
+}
+.DivDivisorio{
+    width:100%;
+    margin:20px 0;
+    height:1px;
+    background-color: white;
+}
+.Item{
+    border: 1px solid skyblue;
+    background-color: #111;
+    padding:10px;
+}
