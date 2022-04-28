@@ -15,7 +15,7 @@ var y = 0;										// Mouse y coordinates
 canvas.width = clientWidth;						// Set canvas width to user width
 canvas.height = clientHeight;					// Set canvas height to user height
 
-var TimedFirework = 1000;						// Repeat Firework every x MS
+var TimedFirework = 5000;						// Repeat Firework every x MS
 var LimiterTicker = 0;							// 
 var fireworks = [];								// Array with starting fireworks
 var particles = [];								// Array with particles
@@ -112,8 +112,8 @@ Firework = function() {
     this.vy = 0;
     this.color = 'rgb(255,255,255)';
     this.dis = distance(this.sx, this.sy, this.tx, this.ty);
-    this.speed = random(700, 1100);
-    this.gravity = 1.5;
+    this.speed = random(700, 2100);
+    this.gravity = 0.2;
     this.ms = 0;
     this.s = 0;
     this.del = false;
@@ -122,7 +122,7 @@ Firework = function() {
         this.ms = frameDelay / 1000;
 
         if (this.s > 2000/frameDelay) {
-            createParticles(typecount, 30, this.x, this.y, this.color);
+            createParticles(typecount, 1, this.x, this.y, this.color);
             this.del = true;
         } else {
             this.speed *= 0.98;
@@ -167,7 +167,7 @@ Particles = function() {
     this.vx = 0;
     this.vy = 0;
     this.speed = random(200, 500);
-    this.gravity = 1;
+    this.gravity = 0;
     this.wind = 0;
     this.type = 1;
     this.opacity = 1;
@@ -183,6 +183,7 @@ Particles = function() {
 
         if (this.type == 1) {
             this.speed *= 0.96;
+            console.log(this.vx);
             this.x -= this.vx * this.speed * this.ms + this.wind;
             this.y -= this.vy * this.speed * this.ms - this.gravity;
         } else if (this.type == 2) {
@@ -311,7 +312,7 @@ update = function() {
 
     if (timer > LimiterTicker) {
         // Creating array with starting Firework
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < 1; index++) {
             createFirework();
         }
 
